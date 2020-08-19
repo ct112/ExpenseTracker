@@ -2,44 +2,38 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Title</title>
+        <title>Expense Tracker</title>
+        <link href="style.css" rel="stylesheet">
     </head>
     <body>
+        <h1>Expense Tracker</h1>
         <form name="form1">
             <label>Expense Amount:</label>
-            <input type="text" name="expense">
+            <input type="number" placeholder="0">
             <lable>Date:</lable>
-            <input type="date" name="date">
+            <input type="date">
             <br>
             <label>Location:</label>
-            <input type="text" name="location">
+            <input type="text" placeholder="e.g. Home Depot" >
             <lable>Description</lable>
-            <input type="text" name="description">
+            <input type="text" placeholder="e.g. shovel">
             <br>
-            <Button type="submit">Submit</Button>
+            <button type="submit">Submit</button>
         </form>
-        <table>
-            <caption>Table<caption>
-            <thead>
-                <tr>
-                    <th>Expense</th>
-                    <th>Date</th>
-                    <th>Location</th>
-                    <th>Description</th>
-                </tr>
+        <br>
+        <br>
+        <table >
+            <thead >
+                <th>Expense</th>
+                <th>Date</th>
+                <th>Location</th>
+                <th>Description</th>
             </thead>
-            <tbody>
-                <tr>
-                    <td>10</td>
-                    <td>sfsaf</td>
-                    <td>gsfgd</td>
-                    <td>325345</td>
-                </tr>
+            <tbody id="tbody">
+
             </tbody>
         </table>
-
-
-
+        <p>DoubleClick item to delete</p>
         <script src="code.js">
 
         </script>
