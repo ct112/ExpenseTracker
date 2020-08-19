@@ -15,8 +15,17 @@ function storeInput(e){
     let inputNodeList = document.querySelectorAll("input");
     let dataAsArray = [];
     for (let i = 0; i<inputNodeList.length;i++){
-        dataAsArray.push(inputNodeList[i].value)
-        inputNodeList[i].value =""
+        if (i == 1){
+            let dateArray = inputNodeList[i].value.split('-');
+            let year = dateArray.splice(0,1);
+            dateArray.push(year);
+            let dateStr = dateArray.join("-");
+            dataAsArray.push(dateStr);
+            inputNodeList[i].value="";
+        } else{
+            dataAsArray.push(inputNodeList[i].value)
+            inputNodeList[i].value ="";
+        }
     }
     e.preventDefault();
     createTdElements(dataAsArray);
