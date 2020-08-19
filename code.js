@@ -6,9 +6,6 @@ let data = {expense:0,
 
 window.onload=init;
 function inputData(){
-
-}
-function init(){
     let inputNodeList = document.querySelectorAll("input");
     let button = document.getElementById("submit");
     let form = document.querySelector('form');
@@ -20,5 +17,9 @@ function init(){
         data.description = document.form1.description.value;
         event.preventDefault();
     })
+
+}
+function init(){
+    inputData();
 }
 
