@@ -1,25 +1,28 @@
-let data = {expense:0,
-            date:"",
-            location:"",
-            description:""
-};
-
-window.onload=init;
-function inputData(){
+function createTdElements(data){
+    let tbody = document.getElementById("tbody");
+    let tableRow = document.createElement('tr')
+    tbody.appendChild(tableRow);
+    for (let i=0; i < data.length;i++){
+        let td = document.createElement("td")
+        td.textContent = data[i];
+        tableRow.appendChild(td);
+    }
+    tableRow.ondblclick = (e) =>{
+       e.target.parentNode.remove();
+    }
+}
+function storeInput(e){
     let inputNodeList = document.querySelectorAll("input");
-    let button = document.getElementById("submit");
-    let form = document.querySelector('form');
-
-    form.addEventListener('submit',event=> {
-        data.expense = document.form1.expense.value;
-        data.date = document.form1.date.value;
-        data.location = document.form1.location.value;
-        data.description = document.form1.description.value;
-        event.preventDefault();
-    })
-
+    let dataAsArray = [];
+    for (let i = 0; i<inputNodeList.length;i++){
+        dataAsArray.push(inputNodeList[i].value)
+        inputNodeList[i].value =""
+    }
+    e.preventDefault();
+    createTdElements(dataAsArray);
 }
 function init(){
-    inputData();
+    let button = document.querySelector('button');
+    button.onclick = event => storeInput(event);
 }
-
+window.onload=init;
