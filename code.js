@@ -19,8 +19,7 @@ function storeInput(e){
             let dateArray = inputNodeList[i].value.split('-');
             let year = dateArray.splice(0,1);
             dateArray.push(year);
-            let dateStr = dateArray.join("-");
-            dataAsArray.push(dateStr);
+            dataAsArray.push(dateArray.join("-"));
             inputNodeList[i].value="";
         } else{
             dataAsArray.push(inputNodeList[i].value)
